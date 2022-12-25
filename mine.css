@@ -1,0 +1,58 @@
+:root {    
+    --action-secondary: hsl(210, 38%, 95%);
+    --foreground-tertiary: hsl(214, 20%, 69%); 
+    --accent: hsl(229, 76%, 66%);
+    --white: hsl(0,0%,100%);
+    --background-secondary:#eaeaea; 
+    
+    --fs-base: 0.85rem;
+}
+.dark-mode{
+    --action-secondary: hsl(218, 23%, 23%);
+    --foreground-tertiary: hsl(214, 20%, 69%);
+    
+    
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color:var(--action-secondary) ;
+    color: var(--action-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.2s linear;
+}
+.color-switch{
+    background: linear-gradient(45deg, hsl(7, 100%, 71%), hsl(46, 100%, 65%));
+    height: 26px;
+    width: 50px;
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    padding: 5px;
+    justify-content: space-between;
+    position: relative;
+    transform: scale(1.5);
+}
+.color-switch-toggle{
+    background-color: #fff;
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+/* toggles the label on-click */
+#input-color-switch:checked + .color-switch .color-switch-toggle{
+    transform: translateX(24px);
+}
+#input-color-switch{
+    display: none;
+}

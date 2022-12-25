@@ -1,0 +1,98 @@
+:root {    
+    --action-secondary: hsl(210, 38%, 95%);
+    --foreground-tertiary: hsl(214, 20%, 69%); 
+    --accent: hsl(229, 76%, 66%);
+    --white: hsl(0,0%,100%);
+    --background-secondary:#eaeaea; 
+    
+    --fs-base: 0.85rem;
+}
+.dark-theme {
+    --action-secondary: hsl(218, 23%, 23%);
+    --foreground-tertiary: hsl(214, 20%, 69%);
+}
+
+html{
+    font-size: var(--fs-base); 
+    line-height: 1.8; 
+    scroll-behavior: smooth; 
+}
+body{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}    
+.mobile{
+    width: 150px;
+    height: 150px;
+    border: 3px solid black;
+    margin-bottom: 10px;
+}
+.desktop{
+    width: 150px;
+    height: 150px;
+    border: 3px solid black;
+}
+.theme-btn-mobile{
+    background: var(--action-secondary);
+    color: var(--foreground-tertiary);
+    width:  40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 25px;
+}
+:is(.theme-btn-mobile):hover{
+    background: var(--accent);
+    color: var(--white);
+}
+.theme-btn-mobile ion-icon{
+    display: none;
+}
+.theme-btn-mobile.dark .moon{
+    display: block;
+}
+.theme-btn-mobile.light .sun{
+    display: block;
+}
+
+.theme-btn-desktop {
+    position: relative;
+    background: var(--background-secondary);
+    color: var(--white);
+    width:  52px;
+    height: 26px;
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+    gap: 10px;
+    border-radius: 100px;
+  }
+  .theme-btn-desktop.light {
+    background: linear-gradient(45deg, hsl(7, 100%, 71%), hsl(46, 100%, 65%));
+  }
+  
+  .theme-btn-desktop.dark {
+    background: linear-gradient(45deg, hsl(225, 100%, 60%), hsl(296, 80%, 40%));
+  }
+  .theme-btn-desktop::before {
+    content: '';
+    position: absolute;
+    background: var(--white);
+    width:  21px;    
+    height: 21px;    
+    border-radius: 30px;
+    /* top: 50%; */
+    left: 3px;
+    /* transform: translateY(-50%); */
+    box-shadow: 0 2px 10px -2px hsla(0, 0%, 0%, 0.05);
+    /* z-index: 2; */
+  }
+  .theme-btn-desktop.dark::before {
+    left: calc(100% - 24px);
+   }
